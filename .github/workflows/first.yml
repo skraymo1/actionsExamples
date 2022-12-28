@@ -7,35 +7,23 @@ jobs:
     name: First job
     runs-on: ubuntu-latest
     steps:
-    - name: Step one
-      uses: actions/checkout@v2.6.0 
-    - name: Step two
-      run: echo "$now"
+      - run: date
       
   job2:
     name: Second job
     runs-on: windows-latest
-    steps:      
-    - name: Step one
-      uses: actions/checkout@v2.6.0 
-    - name: Step two
-      run: echo "$now"
+    steps:          
+      - run: date
       
   job3:
     name: Third job
     runs-on: macos-latest
-    steps:      
-    - name: Step one
-      uses: actions/checkout@v2.6.0 
-    - name: Step two
-      run: echo "$now"
+    steps:
+      - run: date
   
   job4:
     name: Fourth job
     needs: [job1, job2, job3]
     runs-on: ubuntu-latest
-    steps:      
-    - name: Step one
-      uses: actions/checkout@v2.6.0 
-    - name: Step two
-      run: echo "$now"
+    steps: 
+      - run: date
