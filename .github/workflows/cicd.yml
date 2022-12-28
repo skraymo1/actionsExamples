@@ -1,0 +1,22 @@
+name: CICD Pipeline
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.6.0
+      - run: python hello.py
+    
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v2.6.0
+      - uses: actions/upload-artifact@v3.1.1
+        with:
+          # Artifact name
+          name: hellopy
+          path: .
+    
