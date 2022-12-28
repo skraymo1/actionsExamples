@@ -10,7 +10,7 @@ jobs:
     - name: Step one
       uses: actions/checkout@v2.6.0 
     - name: Step two
-      run: env | sort
+      run: echo "$now"
       
   job2:
     name: Second job
@@ -19,13 +19,23 @@ jobs:
     - name: Step one
       uses: actions/checkout@v2.6.0 
     - name: Step two
-      run: "Get-ChildItem Env: | Sort-Object Name"
+      run: echo "$now"
+      
   job3:
-    needs: [job1, job2]
     name: Third job
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:      
     - name: Step one
       uses: actions/checkout@v2.6.0 
     - name: Step two
-      run: "Get-ChildItem Env: | Sort-Object Name"
+      run: echo "$now"
+  
+  job4:
+    name: Fourth job
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+    steps:      
+    - name: Step one
+      uses: actions/checkout@v2.6.0 
+    - name: Step two
+      run: echo "$now"
