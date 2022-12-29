@@ -1,5 +1,5 @@
 name: ActionsTest
-#
+
 on: push
 
 jobs:
@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: skraymo1/customAction@main
+      - name: HelloWorld843287437283287342
+        uses: skraymo1/customAction@v1.0
   
   
