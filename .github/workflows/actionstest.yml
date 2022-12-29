@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu
     steps:
       - uses: actions/checkout@v2
-      -uses: skraymo1/customAction@main
+      - uses: skraymo1/customAction@main
   
   
