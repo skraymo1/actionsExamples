@@ -2,7 +2,7 @@ name: first
 
 on: 
   push: 
-    branches: foo
+    branches: main
 
 jobs:
   job1:
