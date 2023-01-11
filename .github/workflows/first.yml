@@ -2,7 +2,7 @@ name: first
 #Event
 on: 
   push: 
-    branches: foo
+    branches: main
     
 #Job
 jobs:
